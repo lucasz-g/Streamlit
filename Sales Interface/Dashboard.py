@@ -169,7 +169,7 @@ def app():
             st.plotly_chart(fig_barra_vendas_produto, use_container_width=True)
 
     with aba3:
-        qtd_vendedores = st.number_input('Quantidade de vendedores', min_value=2, max_value=10, value=5)
+        qtd_vendedores = st.slider('Quantidade de vendedores', min_value=2, max_value=10, value=df['Vendedor'].nunique())
         col1, col2 = st.columns(2)
         with col1:
             st.metric('Receita total', formatar_valor(preco, 'R$'))
